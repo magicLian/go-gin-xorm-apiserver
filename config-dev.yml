@@ -1,0 +1,17 @@
+deploy: "dev"
+
+server:
+  port: 8080
+  domain: 127.0.0.1
+
+db:
+  postgres:
+    host: 139.217.92.178
+    port: 5432
+    username: postgres
+    password: postgres
+    dbname: lz-go-test
+
+
+
+
