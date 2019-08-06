@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "xxx API",
-    "description": "A xxx API document of WISE-PaaS"
+    "description": "A xxx API document of magiclian"
   },
   "basePath": "/v1.0",
   "securityDefinitions": {
