@@ -1,0 +1,94 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "xxx API",
+    "description": "A xxx API document of WISE-PaaS"
+  },
+  "basePath": "/v1.0",
+  "securityDefinitions": {
+    "EIToken": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "UI"
+    }
+  ],
+  "paths": {
+    "/params": {
+      "get": {
+        "description": "UI parameters",
+        "tags": [
+          "UI"
+        ],
+        "responses": {
+          "200": {
+            "description": "Return all required parameters of user interface."
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "description": "sso verison",
+        "tags": [
+          "UI"
+        ],
+        "responses": {
+          "200": {
+            "description": "Return sso verison"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Auth": {
+      "type": "object",
+      "required": [
+        "username",
+        "password",
+        "redirectUri"
+      ],
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "redirectUri": {
+          "type": "string"
+        },
+        "bindingCode": {
+          "type": "string"
+        }
+      }
+    },
+    "NativeAuth": {
+      "type": "object",
+      "required": [
+        "username",
+        "password"
+      ],
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

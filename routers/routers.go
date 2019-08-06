@@ -16,6 +16,8 @@ func InitRouter(c configs.Conf) *gin.Engine {
 		gin.SetMode(gin.DebugMode)
 	}
 
+	router.Static("/apidoc", "./resources/apidoc")
+
 	v1 := router.Group("/v1")
 	v1.Use(middlewares.Auth())
 	{
