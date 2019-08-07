@@ -21,7 +21,8 @@ func InitRouter(c configs.Conf) *gin.Engine {
 	v1 := router.Group("/v1")
 	v1.Use(middlewares.Auth())
 	{
-		v1.GET("/user", controllers.GetUser)
+		v1.GET("/users", controllers.GetUsers)
+		v1.POST("/users",controllers.CreateUser)
 	}
 	return router
 }

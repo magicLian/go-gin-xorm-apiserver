@@ -6,10 +6,10 @@ server:
 
 db:
   postgres:
-    host: 139.217.92.178
+    host: 172.21.84.66
     port: 5432
     username: postgres
-    password: postgres
+    password: 123456
     dbname: lz-go-test
 
 

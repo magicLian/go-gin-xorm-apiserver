@@ -1,6 +1,7 @@
 package db
 
 import (
+	"errors"
 	"fmt"
 	"gin-test-go/configs"
 	"gin-test-go/models"
@@ -9,7 +10,7 @@ import (
 	"log"
 )
 
-var db *xorm.Engine
+var x *xorm.Engine
 
 func InitDB(c configs.Conf) {
 	pgInfo := "user=" + c.Db.Postgres.Username +
@@ -20,15 +21,16 @@ func InitDB(c configs.Conf) {
 		" sslmode=disable"
 	fmt.Println("pgInfo = {}", pgInfo)
 
-	db, err := xorm.NewEngine("postgres", pgInfo)
+	err := errors.New("")
+	x, err = xorm.NewEngine("postgres", pgInfo)
 	if err != nil {
 		log.Fatalf("Fail to create engine: %v\n", err)
 	}
-	if err = db.Sync2(new(models.User)); err != nil {
+	if err = x.Sync2(new(models.User)); err != nil {
 		log.Fatalf("Fail to sync database: %v\n", err)
 	}
 }
 
 func GetDbInstance() *xorm.Engine {
-	return db
+	return x
 }

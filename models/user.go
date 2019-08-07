@@ -1,12 +1,12 @@
 package models
 
 type User struct {
-	ID           string `json:"id"`
-	Email        string `json:"email"`
-	DOB          string `json:"dob"`
-	FavoriteCity string `json:"favorite_city"`
-	Admin        bool   `json:"admin"`
-	AuthToken    string `json:"auth_token"`
+	ID           int64  `xorm:"id"`
+	Email        string `xorm:"email"`
+	DOB          string `xorm:"dob"`
+	FavoriteCity string `xorm:"favorite_city"`
+	Admin        bool   `xorm:"admin"`
+	AuthToken    string `xorm:"auth_token"`
 	aaa          string `xorm:"aaa"`
 }
 
