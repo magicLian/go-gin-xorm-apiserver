@@ -17,5 +17,5 @@ func main() {
 	router := routers.InitRouter(config)
 
 	//run server
-	router.Run(config.Server.Domain + ":" + config.Server.Port)
+	router.Run(":" + config.Server.Port)
 }

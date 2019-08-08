@@ -13,6 +13,7 @@ func HttpResult(c *gin.Context,code int, err error, data interface{})  {
 			"data":  data,
 		})
 	}
+
 	if code == 400{
 		c.JSON(http.StatusBadRequest, gin.H{
 			"status":  http.StatusBadRequest,
@@ -52,6 +53,4 @@ func HttpResult(c *gin.Context,code int, err error, data interface{})  {
 			"data":    "",
 		})
 	}
-
-
 }
