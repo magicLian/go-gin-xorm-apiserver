@@ -7,7 +7,7 @@ type User struct {
 	FavoriteCity string `xorm:"favorite_city"`
 	Admin        bool   `xorm:"admin"`
 	AuthToken    string `xorm:"auth_token"`
-	aaa          string `xorm:"aaa"`
+	Aaa          string `xorm:"aaa"`
 }
 
 func NewUSer() *User {

@@ -32,7 +32,7 @@ func CreateUser(c *gin.Context) {
 		libs.HttpResult(c, http.StatusBadRequest, err, nil)
 	}
 
-	_, err = dao.CreateUser(user)
+	_, err = dao.CreateUser(&user)
 
 	if err != nil {
 		libs.HttpResult(c, http.StatusExpectationFailed, err, nil)

@@ -15,7 +15,7 @@ func GetUsers() ([]models.User, error) {
 	return userList, err
 }
 
-func CreateUser(u models.User) (int64, error) {
+func CreateUser(u *models.User) (int64, error) {
 	i, err := db.GetDbInstance().Insert(u)
 	if err != nil {
 		return 0, err
