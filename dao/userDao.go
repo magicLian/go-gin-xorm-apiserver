@@ -24,7 +24,7 @@ func CreateUser(u *models.User) (int64, error) {
 }
 
 func UpdateUser(u models.User) (int64, error) {
-	i, err := db.GetDbInstance().Where("id=", u.ID).Update(u)
+	i, err := db.GetDbInstance().Where("id=", u.Id).Update(u)
 	if err != nil {
 		return 0, err
 	}
@@ -40,7 +40,7 @@ func DeleteUserById(id int64) (int64, error) {
 		return 0, errors.New("user is not exist")
 	}
 
-	user := &models.User{ID: id}
+	user := &models.User{Id: id}
 	i, err := db.GetDbInstance().Delete(user)
 	if err != nil {
 		return 0, err
@@ -50,7 +50,7 @@ func DeleteUserById(id int64) (int64, error) {
 }
 
 func IsUserExistsById(id int64) (bool, error) {
-	user := &models.User{ID: id}
+	user := &models.User{Id: id}
 	has, err := db.GetDbInstance().Exist(user)
 	return has,err
 }
